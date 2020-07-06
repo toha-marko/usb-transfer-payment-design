@@ -3,7 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TransferComponent } from './transfer.component';
 
-const routes: Routes = [{ path: '', component: TransferComponent }];
+const routes: Routes = [
+  {
+    path: '',
+    component: TransferComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
