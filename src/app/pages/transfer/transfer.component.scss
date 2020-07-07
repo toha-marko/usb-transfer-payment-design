@@ -1,0 +1,68 @@
+:host::ng-deep {
+  display: flex;
+  min-height: 30rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  & > * {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+  & select {
+    height: 2rem;
+    font-weight: 200;
+    color: #292929;
+  }
+}
+
+input {
+  height: 1.6rem;
+  font-weight: 200;
+  color: #292929;
+  text-align: center;
+}
+
+button {
+  width: 8rem;
+  height: 2rem;
+  border: 0;
+  margin-left: 1rem;
+  font-weight: 200;
+  color: #fff;
+  background-color: var(--baseColor);
+  transition: color 0.12s;
+  will-change: color;
+}
+
+.valid {
+  cursor: pointer;
+  &:hover {
+    color: #292929;
+  }
+}
+
+.sending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.card_visa {
+  background-image: url(/assets/images/visa.svg);
+  background-color: #7da0e0;
+}
+
+.card_ms {
+  background-image: url(/assets/images/mc.svg);
+  background-size: 17%;
+  background-color: #e07d7d;
+}
+
+@media (max-width: 1024px) {
+  :host > * {
+    flex: 1 1 100%;
+    margin: 0 10%;
+  }
+}

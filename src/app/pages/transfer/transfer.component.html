@@ -1,1 +1,25 @@
-<p>transfer works!</p>
+<ng-container [formGroup]="transfer" #form>
+  <app-card
+    formGroupName="cardFrom"
+    [class.card_visa]="cardFrom.value.length > 4"
+  >
+    <input type="text" formControlName="card" #cardFrom />
+    <input type="text" formControlName="owner" />
+    <app-datalist formControlName="month" type="month"></app-datalist>
+    <app-datalist formControlName="year" type="year"></app-datalist>
+  </app-card>
+
+  <app-card [class.card_ms]="cardTo.value.length > 4">
+    <input type="text" formControlName="cardTo" #cardTo />
+  </app-card>
+
+  <div class="sending">
+    <input
+      type="text"
+      formControlName="amount"
+      placeholder="Введите сумму"
+      appCurrency
+    />
+    <button (click)="submit()" [class.valid]="!form.errors">Перевести</button>
+  </div>
+</ng-container>

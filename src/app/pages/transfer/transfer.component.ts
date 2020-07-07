@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-transfer',
@@ -8,10 +9,24 @@ import { Title } from '@angular/platform-browser';
 })
 export class TransferComponent implements OnInit {
 
-  constructor() {
+  transfer = this.fb.group({
+    cardFrom: this.fb.group({
+      card: [null],
+      month: [null],
+      year: [null],
+      owner: [null]
+    }),
+    cardTo: [null],
+    amount: [null]
+  });
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
+  }
+
+  submit() {
+    console.log(this.transfer);
   }
 
 }
