@@ -8,5 +8,8 @@
   </nav>
 </header>
 <main>
-  <router-outlet></router-outlet>
+  <p *ngIf="isLoading$ | async; else loaded">Подготавливаем информацию. Подождите, пожалуйста</p>
+  <ng-template #loaded>
+    <router-outlet></router-outlet>
+  </ng-template>
 </main>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, forwardRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, forwardRef, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -28,7 +28,7 @@ export class DatalistComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
   }
 
-  constructor() {
+  constructor(private cdref: ChangeDetectorRef) {
   }
 
   onChange: (_: any) => void;
@@ -43,6 +43,7 @@ export class DatalistComponent implements OnInit, ControlValueAccessor {
 
   writeValue(obj: string): void {
     this._value = obj;
+    this.cdref.detectChanges();
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;

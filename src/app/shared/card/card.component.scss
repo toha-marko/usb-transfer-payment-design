@@ -32,3 +32,16 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  :host::ng-deep {
+    & > input {
+      &:nth-child(2) {
+        flex: 1 10 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

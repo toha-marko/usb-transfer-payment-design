@@ -1,0 +1,44 @@
+:host::ng-deep {
+  width: 100%;
+  padding: 1rem 10%;
+
+  button {
+    cursor: pointer;
+    font-weight: 200;
+    border: 0;
+    color: #888;
+    background-color: transparent;
+    transition: color 0.12s ease-in;
+    will-change: text-decoration, color;
+    &:hover {
+      color: #333;
+      text-decoration: underline;
+    }
+    &[disabled] {
+      color: #ccc;
+    }
+  }
+
+  & > p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+table, th, td, th {
+  border: 0;
+  text-align: right;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  height: 3rem;
+  font-weight: 400;
+}
+
+tr {
+  height: 2rem;
+}

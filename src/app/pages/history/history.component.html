@@ -1,1 +1,20 @@
-<p>history works!</p>
+<ng-template #empty>
+  <p>История переводов пуста.</p>
+</ng-template>
+<table *ngIf="records && records.length; else empty">
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Карта плательщика</th>
+      <th>Карта получателя</th>
+      <th>Сумма</th>
+      <th>Дата выполнения</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let record of records; let index = index; trackBy: trackIndex">
+      <tr app-custom-tr [record]="record" [index]="index" (action)="recordAction($event)" [freeze]="freezed[index]"></tr>
+    </ng-container>
+  </tbody>
+</table>

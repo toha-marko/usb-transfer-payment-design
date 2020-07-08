@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from './core/services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'usb-transfer-payment-design';
+
+  isLoading$ = this.loading.isLoading$;
+  constructor(private loading: LoadingService) {}
 }

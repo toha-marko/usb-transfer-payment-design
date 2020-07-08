@@ -1,7 +1,7 @@
-import { Directive, HostListener, ElementRef } from '@angular/core';
+import { Directive, HostListener, ElementRef, AfterContentInit } from '@angular/core';
 
 @Directive({ selector: '[appCurrency]' })
-export class CurrencyDirective {
+export class CurrencyDirective implements AfterContentInit {
   @HostListener('focus')
   removeCurrencty() {
     (this.elementHost.nativeElement as HTMLInputElement).value = (this.elementHost.nativeElement as HTMLInputElement).value.split(',')[0];
@@ -13,4 +13,11 @@ export class CurrencyDirective {
     (this.elementHost.nativeElement as HTMLInputElement).value = out;
   }
   constructor(private elementHost: ElementRef) { }
+
+  ngAfterContentInit(): void {
+    if ((this.elementHost.nativeElement as HTMLInputElement).value) {
+      this.removeCurrencty();
+      this.setCurrencty();
+    }
+  }
 }

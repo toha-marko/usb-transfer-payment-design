@@ -1,0 +1,9 @@
+<td>{{index}}</td>
+<td>{{record.cardFrom}}</td>
+<td>{{record.cardTo}}</td>
+<td>{{record.amount}}</td>
+<td>{{record.date}}</td>
+<td>
+  <button (click)="repeatRecord()">Повторить</button>
+  <button (click)="deleteRecord()" [disabled]="freeze">Удалить</button>
+</td>

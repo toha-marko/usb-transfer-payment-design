@@ -9,7 +9,7 @@ const elements = [
   CardComponent,
   DatalistComponent,
   CurrencyDirective
-]
+];
 
 @NgModule({
   declarations: elements,
