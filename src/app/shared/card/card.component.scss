@@ -5,7 +5,7 @@
   padding: 2rem;;
   width: 25rem;
   height: 20rem;
-  border: 1px solid #333;
+  border: 1px solid #aaa;
   border-radius: 1rem;
   box-sizing: border-box;
   background-position: 7% 12%;
@@ -20,8 +20,8 @@
       margin-top: 5rem;
     }
     &:nth-child(2) {
-      flex: 1 10 70%;
-      width: 70%;
+      flex: 1 10 60%;
+      width: 60%;
       margin-right: 5%;
       margin-bottom: 4rem;
     }
@@ -30,6 +30,12 @@
       flex: 0 0 2rem;
       width: 2rem;
     }
+  }
+  & select {
+    height: 2rem;
+    min-height: 2rem;
+    font-weight: 200;
+    color: #292929;
   }
 }
 
